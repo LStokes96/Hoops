@@ -5,4 +5,15 @@
 
 <body> Welcome to the Hoops app </body>
 
+
+ {% for post in posts %}
+ <div>
+ <p> Author: {{ post.first_name }}
+		{{ post.last_name }}</p>
+	<p>Title: {{ post.title }}</p>
+	<p>Content: {{ post.content }}</p>
+</div>
+{% endfor %}
+
+
 {% endblock %}
