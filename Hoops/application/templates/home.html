@@ -6,13 +6,17 @@
 <body> Welcome to the Hoops app </body>
 
 
- {% for post in posts %}
+ {% for comment in comments %}
  <div>
- <p> Author: {{ post.first_name }}
-		{{ post.last_name }}</p>
-	<p>Title: {{ post.title }}</p>
-	<p>Content: {{ post.content }}</p>
-</div>
+	 <p>**********************************************************</p>
+	 <small>Comment ID:{{ comment.id }}</small>
+ <p> Author: {{ comment.author.first_name }}
+		{{ comment.author.last_name }}</p>
+	
+ 	<p>{{ comment.player }}
+	<p>Title: {{ comment.title }}</p>
+	<p>Content: {{ comment.content }}</p>
+ </div>
 {% endfor %}
 
 

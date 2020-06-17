@@ -7,6 +7,13 @@
 	<form method='POST' action=''>
 		{{ form.hidden_tag() }}
 		<div class='form_group'>
+            {{ form.first_name.label }}
+            {{ form.first_name }}
+            <br>
+            {{ form.last_name.label }}
+            {{ form.last_name }}
+	    </br>
+
 			{{ form.email.label }}
 			{{ form.email }}
 			{% if form.email.error %}

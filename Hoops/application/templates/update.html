@@ -3,7 +3,9 @@
     <div class='form'>
         <form method='POST' action=''>
             {{ form.hidden_tag() }}
-
+	<br>
+	{{ form.comment_id.label }}
+	{{ form.comment_id }}
             <br>
             {{ form.title.label }}
             {{ form.title }}
@@ -11,11 +13,10 @@
             {{ form.content.label }}
             {{ form.content }}
             <br>
-	    {{ form.player.label }}
-	    {{ form.player }}
-	    <br>
+            {{ form.player.label }}
+            {{ form.player }}
+            <br>
             {{ form.submit }}
         </form>
     </div>
 {% endblock %}
-

@@ -1,10 +1,22 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField
+from wtforms import StringField, SubmitField, PasswordField, BooleanField, IntegerField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from application.models import Users
-
+from application.models import Users, Players, Comments
+from flask_login import current_user
 
 class RegistrationForm(FlaskForm):
+    first_name = StringField('First Name',
+        validators = [
+            DataRequired(),
+            Length(min=2, max=30)
+        ]
+    )
+    last_name = StringField('Last Name',
+        validators = [
+            DataRequired(),
+            Length(min=2, max=30)
+        ]
+    )
     email = StringField('Email',
         validators = [
             DataRequired(),
@@ -30,17 +42,50 @@ class RegistrationForm(FlaskForm):
         if user:
             raise ValidationError('Email already in use')
 
-class PostForm(FlaskForm):
-    first_name = StringField('First Name',
-        validators = [
+class LoginForm(FlaskForm):
+    email = StringField('Email',
+        validators=[
             DataRequired(),
-            Length(min=2, max=30)
+            Email()
         ]
     )
-    last_name = StringField('Last Name',
+
+    password = PasswordField('Password',
+        validators=[
+            DataRequired()
+        ]
+    )
+
+    remember = BooleanField('Remember Me')
+    submit = SubmitField('login')
+
+
+class CommentForm(FlaskForm):
+    title = StringField('Title',
         validators = [
             DataRequired(),
-            Length(min=2, max=30)
+            Length(min=2, max=100)
+        ]
+    )
+    content = StringField('Content',
+        validators = [
+            DataRequired(),
+            Length(min=2, max=1000)
+        ]
+    )
+    player = StringField('Player Name',
+        validators = [ 
+            DataRequired(),
+            Length(min=2, max=100)
+        ]
+    )
+    submit = SubmitField('Post!')
+
+
+class UpdateCommentForm(FlaskForm):
+    comment_id = IntegerField('Comment_id', 
+        validators = [
+            DataRequired(),
         ]
     )
     title = StringField('Title',
@@ -55,4 +100,18 @@ class PostForm(FlaskForm):
             Length(min=2, max=1000)
         ]
     )
+    player = StringField('Player Name',
+        validators = [
+            DataRequired(),
+            Length(min=2, max=100)
+        ]
+    )
     submit = SubmitField('Post!')
+
+class DeleteCommentForm(FlaskForm):
+    comment_id = IntegerField('Comment_id',
+        validators = [
+            DataRequired(),
+        ]
+    )
+    submit = SubmitField('DELETE!!')
