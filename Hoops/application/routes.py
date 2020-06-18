@@ -70,7 +70,17 @@ def comment():
 
             return redirect(url_for('home'))
         else:
-            return redirect(url_for('players'))
+            postData = Comments(
+                    title = form.title.data,
+                    content = form.content.data,
+                    author = current_user,
+                    player = Players(name=(form.player.data))
+
+                )
+            db.session.add(postData)
+            db.session.commit()
+
+            return redirect(url_for('home'))
 
     else:
         print(form.errors)

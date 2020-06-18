@@ -106,7 +106,7 @@ class UpdateCommentForm(FlaskForm):
             Length(min=2, max=100)
         ]
     )
-    submit = SubmitField('Post!')
+    submit = SubmitField('Update Post!')
 
 class DeleteCommentForm(FlaskForm):
     comment_id = IntegerField('Comment_id',
@@ -115,3 +115,4 @@ class DeleteCommentForm(FlaskForm):
         ]
     )
     submit = SubmitField('DELETE!!')
+
