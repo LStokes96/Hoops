@@ -50,6 +50,7 @@ def login():
                 return redirect(next_page)
             else:
                 return redirect(url_for('home'))
+
     return render_template('login.html', title='Login', form=form)
 
 @app.route('/comment', methods=['GET', 'POST'])
@@ -94,15 +95,24 @@ def update():
     form = UpdateCommentForm()
     if form.validate_on_submit():
         user = current_user.id
-        if Comments.query.filter_by(user_id=user).first():
-            old = Comments.query.filter_by(id=form.comment_id.data).first()
-            old.title = form.title.data
-            old.content = form.content.data
-            old.player = Players.query.filter_by(name=form.player.data).first()
-            db.session.commit()
-            return redirect(url_for('home'))
+        old_post = Comments.query.filter_by(id=form.comment_id.data).first()
+        if user == old_post.user_id:
+            if Players.query.filter_by(name=form.player.data).first():
+                old = Comments.query.filter_by(id=form.comment_id.data).first()
+                old.title = form.title.data
+                old.content = form.content.data
+                old.player = Players.query.filter_by(name=form.player.data).first()
+                db.session.commit()
+                return redirect(url_for('home'))
+            else:
+                old = Comments.query.filter_by(id=form.comment_id.data).first()
+                old.title = form.title.data,
+                old.content = form.content.data,
+                old.player = Players(name=(form.player.data))
+                db.session.commit()
+                return redirect(url_for('home'))
         else:
-            return redirect(url_for('home'))
+            return redirect(url_for('update'))
     return render_template('update.html', title='Update', form=form)
 
 
@@ -112,13 +122,14 @@ def delete():
     form = DeleteCommentForm()
     if form.validate_on_submit():
         user = current_user.id
-        if Comments.query.filter_by(user_id=user).first():
+        old_post = Comments.query.filter_by(id=form.comment_id.data).first()
+        if user == old_post.user_id:
             comment_d = Comments.query.filter_by(id=form.comment_id.data).first()
             db.session.delete(comment_d)
             db.session.commit()
             return redirect(url_for('home'))
         else:
-            return redirect(url_for('home'))
+            return redirect(url_for('delete'))
     return render_template('delete.html', title='Delete', form=form)
 
 

@@ -145,3 +145,152 @@ class TestPlayer(TestBase):
                 )
             response = self.client.get(url_for('players'))
             self.assertIn(b'New Player', response.data)
+
+class TestLogout(TestBase):
+
+    def test_logout(self):
+        with self.client:
+            self.client.post(
+                    '/login',
+                    data=dict(
+                        email='test@test.com',
+                        password='test'),
+                    )
+            response = self.client.get('/logout', follow_redirects=True)
+            self.assertIn(b"login", response.data)
+
+
+class Testupdatedenied(TestBase):
+
+    def test_updateD(self):
+        with self.client:
+            self.client.post(
+                    '/login',
+                    data=dict(
+                        email='test@test.com',
+                        password='test'),
+                    )
+            self.client.post(
+                    '/comment',
+                    data=dict(
+                        title='Test Title',
+                        content='Test Content',
+                        player='New Player'
+                    ),
+                )
+            self.client.get('/logout', follow_redirects=True)
+            self.client.post(
+                    '/login',
+                    data=dict(
+                        email='new@test.com',
+                        password='test2'),
+                    )
+            response = self.client.post(
+                    '/update',
+                    data=dict(
+                        comment_id= 1,
+                        title="New Title",
+                        content="New",
+                        player="New Player"),
+                    follow_redirects=True
+                    )
+            self.assertIn(b'update', response.data)
+
+
+class TestDeletedenied(TestBase):
+
+    def test_deleteD(self):
+        with self.client:
+            self.client.post(
+                    '/login',
+                    data=dict(
+                        email='test@test.com',
+                        password='test'),
+                    )
+            self.client.post(
+                    '/comment',
+                    data=dict(
+                        title='Test Title',
+                        content='Test Content',
+                        player='New Player'
+                    ),
+                )
+            self.client.get('/logout', follow_redirects=True)
+            self.client.post(
+                    '/login',
+                    data=dict(
+                        email='new@test.com',
+                        password='test2'),
+                    )
+            response = self.client.post(
+                    '/delete',
+                    data=dict(
+                        comment_id=1),
+                    follow_redirects=True)
+            self.assertIn(b'delete', response.data)
+
+class TestTagging(TestBase):
+
+    def test_tagging(self):
+        with self.client:
+            self.client.post(
+                    '/login',
+                    data=dict(
+                        email='test@test.com',
+                        password='test'),
+                    )
+            self.client.post(
+                    '/comment',
+                    data=dict(
+                        title='Test Title',
+                        content='Test Content',
+                        player='New Player'
+                    ),
+                )
+            self.client.get('/logout', follow_redirects=True)
+            self.client.post(
+                    '/login',
+                    data=dict(
+                        email='new@test.com',
+                        password='test2'),
+                    )
+            self.client.post(
+                    '/comment',
+                    data=dict(
+                        title='Test Title 2',
+                        content='Test Content 2',
+                        player='New Player'
+                    ),
+                )
+            response = self.client.get(url_for('players'))
+            self.assertNotIn(b'player2', response.data)
+
+class TestUpdateNew(TestBase):
+
+    def test_newplayupdatecom(self):
+        with self.client:
+            self.client.post(
+                    '/login',
+                    data=dict(
+                        email='test@test.com',
+                        password='test'),
+                    )
+            self.client.post(
+                    '/comment',
+                    data=dict(
+                        title='Test Title',
+                        content='Test Content',
+                        player='New Player'
+                    ),
+                )
+            response = self.client.post(
+                    '/update',
+                    data=dict(
+                        comment_id= 1,
+                        title="New Title",
+                        content="New",
+                        player="Now This Player"),
+                    follow_redirects=True
+                    )
+            self.assertIn(b'Now This Player', response.data)
+
