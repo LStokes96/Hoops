@@ -25,7 +25,19 @@ In the picture above, I have shown the continuous integration pipeline, that is 
 As well as having jenkins run tests, I found it usefull to run the app in debugger mode, and try and test all the new features I had added myself. Although not the fasted method of testing, It helped to step back from the code, and allow me to see what other changes can be implemented. 
 
 # Testing
-As mentioned previously I used pytest to test my app, I incorporated both unit testing and intergation testing. 
+As mentioned previously I used pytest to test my app, I incorporated both unit testing and intergation testing. Which allowed me to test both imputing data, and the route navigation. By adding test to see if the output or redirected webpage matched what the app intended, the test would pass or fail. 
+
+*** Testing Screen shots ***
+
+# Front-end
+
+# App Improvements
+There are many things that can be included in the app that I beleive will make it easier to use, and more effective at what it's intended for aside from implemeting the original ERD tables, such as:
+ - By pre-polulating the Teams and Players tables, I could introduce a drop down menue in the comment page for users to select a player or team, which could help clean up the player page, and prevent spelling errors, or duplicate iterations of players. 
+ - Introducing dynamic urls and a search bar to the player page, that would allow users to see all comments relating to the player or team, rather than all comments on home page.
+ - The look of the app could be drasticly improved, to make it more appealing to users, and easier to see the seperation of comments.
+ 
+ 
 
 
 
