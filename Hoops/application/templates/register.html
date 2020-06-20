@@ -16,6 +16,7 @@
 
 			{{ form.email.label }}
 			{{ form.email }}
+			<p> This is for identification purposes only (We will never contact you regarding your password) </p>
 			{% if form.email.error %}
 			 <div class='error'>
 				 {% for error in form.email.errors %}
