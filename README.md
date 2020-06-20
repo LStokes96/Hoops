@@ -25,7 +25,8 @@ Before I started on creating the app I also assessed the risks that I might face
 [![CI-pipe.png](https://i.postimg.cc/DyfKKZCN/CI-pipe.png)](https://postimg.cc/5jrrBxW5)
 
 In the picture above, I have shown the continuous integration pipeline, that is currently implemented to the app. This helps speed up the deployment process, as by having a webhook set up to jenkins, whenever I push any changes to GitHub, Jenkins will automate my unit testing. Allowing me to quickly see if any of the changes made, have had a knock on effect to how the app runs. 
-As well as having jenkins run tests, I found it usefull to run the app in debugger mode, and try and test all the new features I had added myself. Although not the fasted method of testing, It helped to step back from the code, and allow me to see what other changes can be implemented. 
+
+As well as having jenkins run tests, I found it usefull to run the app in debugger mode, and try and test all the new features I had added myself. Although not the fasted method of testing, It helped to step back from the code, and allow me to see what other changes can be implemented. When putting the app up in to a live environment, I will use gunicorn to allow multiple workers to prevent the app going down if there is a fatal exception. 
 
 # Testing
 As mentioned previously I used pytest to test my app, I incorporated both unit testing and intergation testing. Which allowed me to test both imputing data, and the route navigation. By adding test to see if the output or redirected webpage matched what the app intended, the test would pass or fail. 
