@@ -16,8 +16,7 @@ The original set out of my ERD was complex, but would have allowed the user to c
 I tried to kept my trello board simple, adding to it mostly key requirements of the project, to highlight what was essential. At the start of the project this allowed me to see clearly what was left to do. However I found that later into the project I used the trello board less and less, instead useing the git commit measages to, relay what i'd completed and what was the next step. The trello board was still important as I kept my project recources, and refered back to my user stories. 
 
 # Risk Assessment
-*** Risk Assessment Screenshot ***
-Before I started on creating the app I also assessed the risks that I might face after the app is running. Therefore allowing me to add mitigations to try and suppress the overall risk of using the app. As seen in the second screenshot the risk assessment after the app creation highlights how the risks are currently beeing delt with, and how we can try and deal with the ever chaning risks. *** Screenshot 2 ***
+Before I started on creating the app I also assessed the risks that I might face after the app is running. Therefore allowing me to add mitigations to try and suppress the overall risk of using the app. As seen in the screenshot below the risk assessment after the app creation highlights how the risks are currently being delt with, and how we will try and deal with the ever chaning risks. *** Screenshot 2 ***
 
 # CI Pipeline
 *** CI Pipeline Screenshot ***
