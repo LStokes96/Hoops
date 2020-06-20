@@ -20,7 +20,12 @@ I tried to kept my trello board simple, adding to it mostly key requirements of 
 Before I started on creating the app I also assessed the risks that I might face after the app is running. Therefore allowing me to add mitigations to try and suppress the overall risk of using the app. As seen in the second screenshot the risk assessment after the app creation highlights how the risks are currently beeing delt with, and how we can try and deal with the ever chaning risks. *** Screenshot 2 ***
 
 # CI Pipeline
+*** CI Pipeline Screenshot ***
+In the picture above, I have shown the continuous integration pipeline, that is currently implemented to the app. This helps speed up the deployment process, as by having a webhook set up to jenkins, whenever I push any changes to GitHub, Jenkins will automate my unit testing. Allowing me to quickly see if any of the changes made, have had a knock on effect to how the app runs. 
+As well as having jenkins run tests, I found it usefull to run the app in debugger mode, and try and test all the new features I had added myself. Although not the fasted method of testing, It helped to step back from the code, and allow me to see what other changes can be implemented. 
 
+# Testing
+As mentioned previously I used pytest to test my app, I incorporated both unit testing and intergation testing. 
 
 
 
