@@ -8,7 +8,7 @@ The inital idea I had for this project was an app that could help with fantasy t
 This would satisfy the CRUD functionality allowing, users to Create: profiles, and comments, Read: player statistics and comments, Update, and Delete: Comments. Throughout the project multiple elements were changed but the bar player statistics, the CRUD functions stayed the same.
 
 # ERD
-![Alt text] (/ScreenShots/Screenshot 2020-06-19 at 18.41.38.png)?raw=True
+![Alt text] (/Hoops-git/ScreenShots/Screenshot 2020-06-19 at 18.41.38.png)?raw=True
 The original set out of my ERD was complex, but would have allowed the user to comment about players, teams, or both, and with many to many relationships, they could tag multiple of both. However as this was my first project I felt it wise to shink the scope, to maintain the CRUD functions and have them work at a good standard. 
 
 # Trello 
