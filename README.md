@@ -9,10 +9,12 @@ This would satisfy the CRUD functionality allowing, users to Create: profiles, a
 
 # ERD
 [![ERD.png](https://i.postimg.cc/QMCtNm0R/ERD.png)](https://postimg.cc/jWVKZHVX)
+
 The original set out of my ERD was complex, but would have allowed the user to comment about players, teams, or both, and with many to many relationships, they could tag multiple of both. However as this was my first project I felt it wise to shink the scope, to maintain the CRUD functions and have them work at a good standard. 
 
 # Trello 
 [![Trello.png](https://i.postimg.cc/c4T0KYgZ/Trello.png)](https://postimg.cc/CzZWXRs6)
+
 I tried to kept my trello board simple, adding to it mostly key requirements of the project, to highlight what was essential. At the start of the project this allowed me to see clearly what was left to do. However I found that later into the project I used the trello board less and less, instead useing the git commit measages to, relay what i'd completed and what was the next step. The trello board was still important as I kept my project recources, and refered back to my user stories. 
 
 # Risk Assessment
@@ -21,6 +23,7 @@ Before I started on creating the app I also assessed the risks that I might face
 
 # CI Pipeline
 [![CI-pipe.png](https://i.postimg.cc/DyfKKZCN/CI-pipe.png)](https://postimg.cc/5jrrBxW5)
+
 In the picture above, I have shown the continuous integration pipeline, that is currently implemented to the app. This helps speed up the deployment process, as by having a webhook set up to jenkins, whenever I push any changes to GitHub, Jenkins will automate my unit testing. Allowing me to quickly see if any of the changes made, have had a knock on effect to how the app runs. 
 As well as having jenkins run tests, I found it usefull to run the app in debugger mode, and try and test all the new features I had added myself. Although not the fasted method of testing, It helped to step back from the code, and allow me to see what other changes can be implemented. 
 
@@ -30,8 +33,6 @@ As mentioned previously I used pytest to test my app, I incorporated both unit t
 [![Testing-68.png](https://i.postimg.cc/x1hrHP0r/Testing-68.png)](https://postimg.cc/3kXbQm49)
 
 [![Testing-91.png](https://i.postimg.cc/prq4df06/Testing-91.png)](https://postimg.cc/zHH0tgYC)
-
-# Front-end
 
 
 # App Improvements
