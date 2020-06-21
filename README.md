@@ -37,9 +37,12 @@ As mentioned previously I used pytest to test my app, I incorporated both unit t
 
 
 # Front-end
+The first screen that the user is taken to when imputing the URL is the Home page, this is the page that displays all the users comments. This page also has links to all pages a user can be dirrected to while not logged in, including the Player page, that shows a list of all current players that users can tag, a Register page, and a Login page. As a new user the first page you will go to is the register page.
 [![Home-screen.png](https://i.postimg.cc/Z5Sf4xyT/Home-screen.png)](https://postimg.cc/LnxkVfT7)
 [![Register.png](https://i.postimg.cc/tgrDd0vT/Register.png)](https://postimg.cc/nsDvZWJb)
+The register page, allows the user to create an account, enerting their first and last name, email, and a password. They must confirm their password to ensure they hasn't made a typo in creating their password. Once the user has created thier account they will be redirected straight to the login page.
 [![Login.png](https://i.postimg.cc/tTYk2r8z/Login.png)](https://postimg.cc/Q9ZcMq8B)
+Once the user has logged in they will have access to more of the website, granting them access to the comments page, where they can create, comments and players. As well as the update page and delete page, where they can input the id of the comment they want to change, as long as the comment was made by yourself. 
 [![Comment.png](https://i.postimg.cc/Gh0KxxKk/Comment.png)](https://postimg.cc/XX89VFTJ)
 [![Update.png](https://i.postimg.cc/g2mKfcfj/Update.png)](https://postimg.cc/crkY3W1G)
 [![Delete.png](https://i.postimg.cc/8CnBJRsf/Delete.png)](https://postimg.cc/nsBQNQ4n)
