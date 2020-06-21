@@ -36,6 +36,15 @@ As mentioned previously I used pytest to test my app, I incorporated both unit t
 [![Testing-91.png](https://i.postimg.cc/prq4df06/Testing-91.png)](https://postimg.cc/zHH0tgYC)
 
 
+# Front-end
+[![Home-screen.png](https://i.postimg.cc/Z5Sf4xyT/Home-screen.png)](https://postimg.cc/LnxkVfT7)
+[![Register.png](https://i.postimg.cc/tgrDd0vT/Register.png)](https://postimg.cc/nsDvZWJb)
+[![Login.png](https://i.postimg.cc/tTYk2r8z/Login.png)](https://postimg.cc/Q9ZcMq8B)
+[![Comment.png](https://i.postimg.cc/Gh0KxxKk/Comment.png)](https://postimg.cc/XX89VFTJ)
+[![Update.png](https://i.postimg.cc/g2mKfcfj/Update.png)](https://postimg.cc/crkY3W1G)
+[![Delete.png](https://i.postimg.cc/8CnBJRsf/Delete.png)](https://postimg.cc/nsBQNQ4n)
+
+
 # App Improvements
 There are many things that can be included in the app that I beleive will make it easier to use, and more effective at what it's intended for aside from implemeting the original ERD tables, such as:
  - By pre-polulating the Teams and Players tables, I could introduce a drop down menue in the comment page for users to select a player or team, which could help clean up the player page, and prevent spelling errors, or duplicate iterations of players. 
