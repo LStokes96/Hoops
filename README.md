@@ -1,3 +1,8 @@
+Links : 
+Trello : https://trello.com/b/QpWItfyc/hoops
+Git Repo : https://github.com/LStokes96/Hoops-git
+
+
 # Hoops
 Fundamental Project
 For this project we had been tasked with creating a CRUD application, using methodologies and supporting tools we have learned during our training. This app must contain a relational database, consiting of at least 2 tables. The app will be created in python,with a flask front-end, and deployed on GCP.  
